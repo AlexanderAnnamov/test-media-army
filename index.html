@@ -10,6 +10,7 @@
       href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=19165ce3-9b77-417c-9985-ac3ec9e7b975&lang=ru_RU"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -35,7 +36,7 @@
                   </ul>
                 </nav>
               </div>
-              <hr class="header__line-separator" />
+              <hr class="line-separator" />
               <div class="header__panel-control">
                 <button class="header__panel-catalog">
                   <img
@@ -172,6 +173,52 @@
         </div>
       </div>
       <div class="banner"><img src="./img/banner/banner.png" alt="" /></div>
+      <div class="shops">
+        <div class="shops__container">
+          <div class="shops__row">
+            <div class="shops__address">
+              <h2 class="shops__title">магазины</h2>
+              <div class="select is-active">
+                <div class="select__header">
+                  <div class="select__items">
+                    <div class="select__city">Город</div>
+                    <span class="select__current">Екатеринбург</span>
+                  </div>
+
+                  <img
+                    src="./img/shops/arrow-bottom.svg"
+                    alt="arrow-bottom"
+                    class="select__icon"
+                  />
+                </div>
+
+                <div class="select__body">
+                  <div class="select__item">Москва</div>
+                  <div class="select__item">Санкт-Петербург</div>
+                  <div class="select__item">Челябинск</div>
+                  <div class="select__item">Казань</div>
+                  <div class="select__item">Екатеринбург</div>
+                </div>
+              </div>
+              <hr class="line-separator" />
+              <h2>Магазин на Черняховского</h2>
+              <ul>
+                <li>улица Черняховского, 99</li>
+                <li>+7 (999) 012-34-56</li>
+                <li>Ежедневно с 09:00 до 22:00</li>
+              </ul>
+              <hr class="line-separator" />
+              <h2>Магазин на Блюхера</h2>
+              <ul>
+                <li>улица Блюхера, 99</li>
+                <li>+7 (999) 012-34-56 (доб. 02)</li>
+                <li>Ежедневно с 10:00 до 21:00</li>
+              </ul>
+            </div>
+            <div class="shops__map" id="map"></div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="./main.js"></script>
   </body>
