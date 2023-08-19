@@ -515,7 +515,6 @@ legend {
 }
 .novelties__big-card {
     width: 50%;
-    /* height: 100%;     */
 }
 
 .novelties__big-card img{
@@ -526,13 +525,15 @@ legend {
 .novelties__small-cards {
     width: 100%;
     display: flex;
-    /* align-items: center; */
-    /* justify-content: space-between; */
+    align-items: start;
     column-gap: 20px;
 }
 .novelties__small-card {
-    /* min-width: 235px; */
     width: 100%;
+}
+
+.novelties__small-card:hover p {
+   color:#0064D8;
 }
 
 .novelties__small-card p {
@@ -552,17 +553,21 @@ legend {
 
 .novelties__small-card img {
     width: 100%;
-    /* min-width: 230px;
-    min-height: 230px; */
 }
 
 .novelties__column-cards {
- 
     width: 100%;
     row-gap: 44px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* align-items: center; */
-    
+}
+
+/* banner */
+.banner {
+    margin: 60px 0 0 0;
+}
+
+.banner img {
+width: 100%;
 }
