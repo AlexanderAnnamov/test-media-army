@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
     <title>Media-army</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -65,7 +70,108 @@
           </div>
         </div>
       </header>
-      <script src="./main.js"></script>
+
+      <div class="swiper mySwiper">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/slider/slide-holi-season.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/slider/slide-melt-prices.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/slider/slide-holi-season.png" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/slider/slide-melt-prices.png" />
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+
+      <div class="achievements">
+        <div class="achievements__container">
+          <ul class="achievements__row">
+            <li class="achievements__item">
+              <img src="./img/achievements/like.svg" alt="" />
+              <p>прямые поставки от производителей</p>
+            </li>
+            <li class="achievements__item">
+              <img src="./img/achievements/check-mark.svg" alt="" />
+              <p>30 лет опыта продаж</p>
+            </li>
+            <li class="achievements__item">
+              <img src="./img/achievements/box.svg" alt="" />
+              <p>более 100 000 товаров</p>
+            </li>
+            <li class="achievements__item">
+              <img src="./img/achievements/stock.svg" alt="" />
+              <p>склад категории А 14 000 м²</p>
+            </li>
+            <li class="achievements__item">
+              <img src="./img/achievements/delivery.svg" alt="" />
+              <p>доставка по России и странам ЕАЭС</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="novelties">
+        <div class="novelties__container">
+          <h2 class="novelties__title">наши новинки</h2>
+          <div class="novelties__row">
+            <div class="novelties__big-card">
+              <img src="./img/novelties/interior.png" alt="interior" />
+            </div>
+            <div class="novelties__column-cards">
+              <div class="novelties__small-cards">
+                <div class="novelties__small-card">
+                  <img src="./img/novelties/beach.png" alt="beach" />
+                  <p>пляжные товары</p>
+                </div>
+                <div class="novelties__small-card">
+                  <img
+                    src="./img/novelties/home-textiles.png"
+                    alt="home-textiles"
+                  />
+                  <p>домашний текстиль</p>
+                </div>
+                <div class="novelties__small-card">
+                  <img
+                    src="./img/novelties/haber-access.png"
+                    alt="haber-access"
+                  />
+                  <p>галантерея и аксессуары</p>
+                </div>
+                <div class="novelties__small-card">
+                  <img src="./img/novelties/hygiene.png" alt="beach" />
+                  <p>средства гигиены и бытовая химия</p>
+                </div>
+              </div>
+              <div class="novelties__small-cards">
+                <div class="novelties__small-card">
+                  <img src="./img/novelties/holidays.png" alt="beach" />
+                  <p>праздники и подарки</p>
+                </div>
+                <div class="novelties__small-card">
+                  <img src="./img/novelties/household-goods.png" alt="beach" />
+                  <p>хозтовары</p>
+                </div>
+                <div class="novelties__small-card">
+                  <img src="./img/novelties/sports.png" alt="beach" />
+                  <p>спортивные товары</p>
+                </div>
+                <div class="novelties__small-card">
+                  <img src="./img/novelties/pets.png" alt="beach" />
+                  <p>товары для животных</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <script src="./main.js"></script>
   </body>
 </html>
