@@ -1,21 +1,81 @@
 // api YaMap
 
-let center = [48.8866527839977, 2.34310679732974];
+let center = [56.81911640814073, 60.71813354831949];
+let сhernyakhovsky = [56.75167166360553, 60.75666995767255];
+
+//
+
+const cities = {
+  EKATERINBURG: [56.81911640814073, 60.71813354831949],
+  PETERBURG: [59.934910487611226, 30.372076390685216],
+  OMSK: [54.99173363775291, 73.35472123156913],
+  CHELYABINSK: [55.16568660106791, 61.43873868217899],
+  KAZAN: [55.78612625631046, 49.13234342462967],
+};
 
 function init() {
-  let map = new ymaps.Map("map", {
-    center: center,
-    zoom: 17,
-  });
+  var map = new ymaps.Map(
+    "map",
+    {
+      center: center,
+      zoom: 11,
+      controls: [],
+    },
+    { suppressMapOpenBlock: true }
+  );
 
-  map.controls.remove("geolocationControl"); // удаляем геолокацию
-  map.controls.remove("searchControl"); // удаляем поиск
-  map.controls.remove("trafficControl"); // удаляем контроль трафика
-  map.controls.remove("typeSelector"); // удаляем тип
-  map.controls.remove("fullscreenControl"); // удаляем кнопку перехода в полноэкранный режим
-  map.controls.remove("zoomControl"); // удаляем контрол зуммирования
-  map.controls.remove("rulerControl"); // удаляем контрол правил
-  map.behaviors.disable(["scrollZoom"]); // отключаем скролл карты (опционально)
+  let placemark = new ymaps.Placemark(
+    [56.75167166360553, 60.75666995767255],
+    {},
+    {
+      iconLayout: "default#image",
+      iconImageHref: "./img/map/placemark.svg",
+      iconImageSize: [48, 54],
+      iconImageOffset: [-19, -44],
+    }
+  );
+
+  let placemark2 = new ymaps.Placemark(
+    [56.86537049860099, 60.66835145503491],
+    {},
+    {
+      iconLayout: "default#image",
+      iconImageHref: "./img/map/placemark.svg",
+      iconImageSize: [48, 54],
+      iconImageOffset: [-19, -44],
+    }
+  );
+
+  map.geoObjects.add(placemark);
+  map.geoObjects.add(placemark2);
+
+  map
+    .setBounds(map.geoObjects.getBounds(), { checkZoomRange: true })
+    .then(function () {
+      if (map.getZoom() > 15) map.setZoom(15);
+    });
+
+  var el = document.getElementById("show");
+  el.addEventListener("click", showBal, false);
+  function showBal() {
+    map.setCenter([56.75167166360553, 60.75666995767255]),
+      map.balloon.open(
+        map.getCenter(),
+        { content: "Hello Yandex!" },
+        { closeButton: true }
+      );
+  }
+
+  var el2 = document.getElementById("show2");
+  el2.addEventListener("click", showBal2, false);
+  function showBal2() {
+    map.setCenter([56.86537049860099, 60.66835145503491]),
+      map.balloon.open(
+        map.getCenter(),
+        { content: "Hello Yandex!" },
+        { closeButton: true }
+      );
+  }
 }
 
 // custom select

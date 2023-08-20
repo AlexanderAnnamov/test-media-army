@@ -91,7 +91,6 @@
         <div class="swiper-pagination"></div>
         <div class="swiper-button-next"></div>
       </div>
-
       <div class="achievements">
         <div class="achievements__container">
           <ul class="achievements__row">
@@ -177,7 +176,7 @@
         <div class="shops__container">
           <div class="shops__row">
             <div class="shops__address">
-              <h2 class="shops__title">магазины</h2>
+              <div class="shops__title"><h2>магазины</h2></div>
               <div class="select is-active">
                 <div class="select__header">
                   <div class="select__items">
@@ -193,27 +192,31 @@
                 </div>
 
                 <div class="select__body">
-                  <div class="select__item">Москва</div>
-                  <div class="select__item">Санкт-Петербург</div>
-                  <div class="select__item">Челябинск</div>
-                  <div class="select__item">Казань</div>
-                  <div class="select__item">Екатеринбург</div>
+                  <div id="city" class="select__item">Москва</div>
+                  <div id="city" class="select__item">Санкт-Петербург</div>
+                  <div id="city" class="select__item">Челябинск</div>
+                  <div id="city" class="select__item">Казань</div>
+                  <div id="city" class="select__item">Екатеринбург</div>
                 </div>
               </div>
               <hr class="line-separator" />
-              <h2>Магазин на Черняховского</h2>
-              <ul>
-                <li>улица Черняховского, 99</li>
-                <li>+7 (999) 012-34-56</li>
-                <li>Ежедневно с 09:00 до 22:00</li>
-              </ul>
+              <button id="show">
+                <h2>Магазин на Черняховского</h2>
+                <ul>
+                  <li>улица Черняховского, 99</li>
+                  <li>+7 (999) 012-34-56</li>
+                  <li>Ежедневно с 09:00 до 22:00</li>
+                </ul>
+              </button>
               <hr class="line-separator" />
-              <h2>Магазин на Блюхера</h2>
-              <ul>
-                <li>улица Блюхера, 99</li>
-                <li>+7 (999) 012-34-56 (доб. 02)</li>
-                <li>Ежедневно с 10:00 до 21:00</li>
-              </ul>
+              <button id="show2">
+                <h2>Магазин на Блюхера</h2>
+                <ul>
+                  <li>улица Блюхера, 99</li>
+                  <li>+7 (999) 012-34-56 (доб. 02)</li>
+                  <li>Ежедневно с 10:00 до 21:00</li>
+                </ul>
+              </button>
             </div>
             <div class="shops__map" id="map"></div>
           </div>

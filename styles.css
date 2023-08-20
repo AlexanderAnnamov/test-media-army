@@ -585,6 +585,7 @@ width: 100%;
 
 .shops__address h2 {
     margin: 20px 0 0 0;
+    text-align: start;
     color: var(--label-black, #212328);
     font-family: 'Golos Text';
     font-size: 16px;
@@ -593,12 +594,17 @@ width: 100%;
     line-height: 150%;
 }
 
-.shops__address ul {
+
+.shops__address button ul {
     margin: 0 0 20px 0;
 }
 
-.shops__address li {
-    
+.shops__address button:focus h2 {
+    color: #0064D8;
+}
+
+.shops__address button li {
+    text-align: start;
     color: var(--label-black, #212328);
     font-family: 'Golos Text';
     font-size: 14px;
@@ -607,7 +613,8 @@ width: 100%;
     line-height: 140%;
 }
 
-.shops__title {
+.shops__title h2{
+    margin: 0;
     color: var(--label-black, #212328);
     font-family: 'Golos Text';
     font-size: 44px;
