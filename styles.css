@@ -724,9 +724,7 @@ width: 100%;
 }
 
 .auth {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+   
     top: 0;
     left: 0;
     width: 100%;
@@ -734,6 +732,9 @@ width: 100%;
     position: absolute;
     z-index: 10;
     background-color: #1B225CA6;
+    display: none;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -750,6 +751,7 @@ width: 100%;
 }
 
 .auth {
+   
 }
 
 
@@ -931,6 +933,10 @@ form i {
 .password-control.view {
 	background: url('./img/auth/visible-password.svg') 0 0 no-repeat;
 }
+
+.wrapper.--show {
+    transform: translateY(0%);
+  }
 
 
 

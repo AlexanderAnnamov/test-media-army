@@ -151,7 +151,7 @@ let swiper = new Swiper(".mySwiper", {
 select();
 ymaps.ready(init);
 
-// password
+// !togle visible password
 
 function show_hide_password(target) {
   var input = document.getElementById("password");
@@ -163,4 +163,17 @@ function show_hide_password(target) {
     input.setAttribute("type", "password");
   }
   return false;
+}
+
+function viewDiv() {
+  let auth = document.getElementById("auth");
+  if (auth.style.display == "flex") {
+    auth.style.display = "none";
+    document.body.style.overflow = "auto";
+    document.body.style.paddingRight = "0";
+  } else {
+    auth.style.display = "flex";
+    document.body.style.overflow = "hidden";
+    document.body.style.paddingRight = "22px";
+  }
 }
