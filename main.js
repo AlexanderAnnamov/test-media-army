@@ -3,12 +3,12 @@
 let center = [56.81911640814073, 60.71813354831949];
 let сhernyakhovsky = [56.75167166360553, 60.75666995767255];
 
-//
+// city
 
 const cities = {
   EKATERINBURG: [56.81911640814073, 60.71813354831949],
   PETERBURG: [59.934910487611226, 30.372076390685216],
-  OMSK: [54.99173363775291, 73.35472123156913],
+  MOSKOW: [55.7599352627125, 37.6270555029466],
   CHELYABINSK: [55.16568660106791, 61.43873868217899],
   KAZAN: [55.78612625631046, 49.13234342462967],
 };
@@ -76,6 +76,34 @@ function init() {
         { closeButton: true }
       );
   }
+
+  let selectItem = document.querySelectorAll(".select__item");
+
+  function setPosition() {
+    (select = this.closest(".select")),
+      (currentText = select.querySelector(".select__current"));
+    switch (currentText.innerText) {
+      case "Екатеринбург":
+        map.setCenter(cities.EKATERINBURG);
+        break;
+      case "Санкт-Петербург":
+        map.setCenter(cities.PETERBURG);
+        break;
+      case "Москва":
+        map.setCenter(cities.MOSKOW);
+        break;
+      case "Казань":
+        map.setCenter(cities.KAZAN);
+        break;
+      case "Челябинск":
+        map.setCenter(cities.CHELYABINSK);
+        break;
+    }
+  }
+
+  selectItem.forEach((item) => {
+    item.addEventListener("click", setPosition);
+  });
 }
 
 // custom select

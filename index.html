@@ -11,6 +11,7 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=19165ce3-9b77-417c-9985-ac3ec9e7b975&lang=ru_RU"></script>
+    <script src="balloon_autopan.js" type="text/javascript"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -71,7 +72,6 @@
           </div>
         </div>
       </header>
-
       <div class="swiper mySwiper">
         <div class="swiper-button-prev"></div>
         <div class="swiper-wrapper">
@@ -190,7 +190,6 @@
                     class="select__icon"
                   />
                 </div>
-
                 <div class="select__body">
                   <div id="city" class="select__item">Москва</div>
                   <div id="city" class="select__item">Санкт-Петербург</div>
@@ -221,6 +220,41 @@
             <div class="shops__map" id="map"></div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="auth">
+      <div class="auth__modal">
+        <div class="auth__header">
+          <h2 class="auth__title">вход</h2>
+          <button class="auth__close">
+            <img src="./img/icons/close-btn.svg" alt="" />
+          </button>
+        </div>
+        <p class="auth__reminder">вход через E-mail:</p>
+        <form action="" class="ui-form">
+          <div class="form-row">
+            <input type="text" id="email" required autocomplete="off" /><label
+              for="email"
+              >E-mail</label
+            >
+          </div>
+          <div class="form-row">
+            <input
+              type="password"
+              id="password"
+              required
+              autocomplete="off"
+            /><label for="password">Пароль</label>
+          </div>
+          <div class="auth__btns">
+            <button class="auth__signin">
+              <p>
+                <input type="submit" value="Войти" />
+              </p>
+            </button>
+            <button class="auth__no-password">Забыли пароль?</button>
+          </div>
+        </form>
       </div>
     </div>
     <script src="./main.js"></script>
