@@ -231,10 +231,11 @@
           </button>
         </div>
         <p class="auth__reminder">вход через E-mail:</p>
-        <form action="" class="ui-form">
+        <form action="" class="form">
           <div class="form-row">
             <input type="text" id="email" required autocomplete="off" /><label
               for="email"
+              class="form-label"
               >E-mail</label
             >
           </div>
@@ -244,7 +245,7 @@
               id="password"
               required
               autocomplete="off"
-            /><label for="password">Пароль</label>
+            /><label class="form-label" for="password">Пароль</label>
           </div>
           <div class="auth__btns">
             <button class="auth__signin">
@@ -255,6 +256,11 @@
             <button class="auth__no-password">Забыли пароль?</button>
           </div>
         </form>
+        <hr class="line-separator margin-top20" />
+        <div class="auth__to-registration">
+          <h2>у вас нет аккаунта?&nbsp;</h2>
+          <button class="auth__registration">зарегистрируйтесь</button>
+        </div>
       </div>
     </div>
     <script src="./main.js"></script>
