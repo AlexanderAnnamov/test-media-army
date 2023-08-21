@@ -11,6 +11,7 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=19165ce3-9b77-417c-9985-ac3ec9e7b975&lang=ru_RU"></script>
+
     <script src="balloon_autopan.js" type="text/javascript"></script>
   </head>
   <body>
@@ -243,9 +244,15 @@
             <input
               type="password"
               id="password"
+              name="password"
               required
               autocomplete="off"
-            /><label class="form-label" for="password">Пароль</label>
+            /><a
+              href="#"
+              class="password-control"
+              onclick="return show_hide_password(this);"
+            ></a
+            ><label class="form-label" for="password">Пароль</label>
           </div>
           <div class="auth__btns">
             <button class="auth__signin">

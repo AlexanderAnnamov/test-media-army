@@ -832,15 +832,19 @@ width: 100%;
 
   .form-row input:focus~.form-label,
   .form-row input:not(:focus):valid~.form-label {
-    top: 25%;
-    font-size: 10px;
+    top: 30%;
+    font-size: 14px;
   }
-  
 
  .form-row input {
     width: 100%;
-    padding: 18px 12px;
-    font-family: 'Roboto', sans-serif;
+    padding: 28px 12px 8px;
+    color: var(--black, #212328);
+    font-family: 'Golos Text';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; /* 24px */
     border-radius: 10px;
     border: 1px solid var(--separator-grey, #E7E7E7);
  }
@@ -908,5 +912,26 @@ width: 100%;
 .auth__registration::first-letter {
     text-transform: uppercase;
 }
+
+form i {
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+.password-control {
+	position: absolute;
+	top: 50%;
+    transform: translateY(-50%);
+	right: 12px;
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url('./img/auth/no-visible-password.svg') 0 0 no-repeat;
+}
+.password-control.view {
+	background: url('./img/auth/visible-password.svg') 0 0 no-repeat;
+}
+
+
 
 
