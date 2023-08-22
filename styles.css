@@ -116,6 +116,8 @@ legend {
 
 /* header */
 
+
+
 .header {
 }
 
@@ -213,6 +215,10 @@ legend {
     font-weight: 500;
     line-height: 140%;
     cursor: pointer;
+}
+
+.header__panel-nav ul li:hover {
+    color: var(--accent-blue-1, #0064D8);
 }
 
 .header__panel-nav ul li:not(:last-child) {
@@ -335,11 +341,15 @@ legend {
 
 .header__panel-signin p{
     color: var(--label-black, #212328);
-    font-family: Golos Text VF;
+    font-family: 'Golos Text';
     font-size: 14px;
     font-style: normal;
     font-weight: 500;
     line-height: 140%; 
+}
+
+.header__panel-signin:hover p{
+    color:#0064D8;
 }
 
 .header__panel-signin p::first-letter {
@@ -353,6 +363,18 @@ legend {
     padding: 12px 14px;
     width: 100%;
     margin: 0 20px 0 0;
+    position: relative;
+}
+
+.search-control {
+    position: absolute;
+	top: 50%;
+    transform: translateY(-50%);
+	right: 12px;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	background: url('./img/header/clear-input.svg') center center no-repeat;
 }
 
 .search-form__btn img {
@@ -369,6 +391,7 @@ legend {
     font-weight: 400;
     line-height: 150%;
      width: 100%;
+     caret-color: #0064D8;
 }
 
 /* swiper  */
@@ -653,6 +676,7 @@ width: 100%;
     border: 1px solid var(--separator-grey, #E7E7E7);
     background: var(--bg-white, #FFF);
     padding: 8px 12px;
+    
 }
 
 .select__city {
@@ -673,6 +697,7 @@ width: 100%;
     font-style: normal;
     font-weight: 400;
     line-height: 150%;
+    
 }
 .select__icon {
 	align-items: center;
@@ -698,9 +723,13 @@ width: 100%;
 }
 .select__item {
 	cursor: pointer;
-	font-size: 16px;
-	line-height: 24px;
-	padding: 8px;
+	color: var(--label-black, #212328);
+    font-family: 'Golos Text';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%; 
+	padding: 8px 12px;
 }
 
 .select__item:hover {
@@ -838,6 +867,10 @@ width: 100%;
     font-size: 14px;
   }
 
+  .form-row input:focus {
+    border: 1px solid #0064D8;
+  }
+
  .form-row input {
     width: 100%;
     padding: 28px 12px 8px;
@@ -849,6 +882,7 @@ width: 100%;
     line-height: 150%; /* 24px */
     border-radius: 10px;
     border: 1px solid var(--separator-grey, #E7E7E7);
+    caret-color:#0064D8;
  }
 
  .auth__btns {
@@ -937,6 +971,19 @@ form i {
 .wrapper.--show {
     transform: translateY(0%);
   }
+
+  body::-webkit-scrollbar { width: 0; }
+
+  /* ie 10+ */
+  body { -ms-overflow-style: none; }
+  
+  /* фф (свойство больше не работает, других способов тоже нет) */
+  body { overflow: -moz-scrollbars-none; } 
+
+
+
+
+
 
 
 

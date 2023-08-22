@@ -167,13 +167,29 @@ function show_hide_password(target) {
 
 function viewDiv() {
   let auth = document.getElementById("auth");
+
   if (auth.style.display == "flex") {
     auth.style.display = "none";
     document.body.style.overflow = "auto";
-    document.body.style.paddingRight = "0";
   } else {
     auth.style.display = "flex";
     document.body.style.overflow = "hidden";
-    document.body.style.paddingRight = "22px";
   }
 }
+
+// let searchInput = document.querySelector(".search-form__txt");
+// let closeBtn = document.querySelector("#search-control");
+
+// let isFocused = document.activeElement === searchInput;
+// console.log(isFocused);
+
+// if (isFocused) {
+//   closeBtn.classList.toggle("search-control");
+// }
+
+function cl() {
+  let getInput = doсument.querySelector(".search-form");
+  getInput.value = "";
+}
+
+document.getElementById("search-control").addEventListener("click", cl, {});

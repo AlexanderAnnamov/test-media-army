@@ -52,10 +52,12 @@
                     <img src="./img/header/search.svg" alt="search" />
                   </button>
                   <input
+                    id="search-input"
                     type="text"
                     class="search-form__txt"
                     placeholder="Поиск товаров..."
                   />
+                  <button id="search-control" class="search-control"></button>
                 </div>
                 <button class="header__panel-favorites">
                   <img src="./img/header/favorite.svg" alt="favorite" />
@@ -178,7 +180,7 @@
           <div class="shops__row">
             <div class="shops__address">
               <div class="shops__title"><h2>магазины</h2></div>
-              <div class="select is-active">
+              <div class="select">
                 <div class="select__header">
                   <div class="select__items">
                     <div class="select__city">Город</div>
@@ -247,11 +249,10 @@
               name="password"
               required
               autocomplete="off"
-            /><a
-              href="#"
+            /><button
               class="password-control"
               onclick="return show_hide_password(this);"
-            ></a
+            ></button
             ><label class="form-label" for="password">Пароль</label>
           </div>
           <div class="auth__btns">
