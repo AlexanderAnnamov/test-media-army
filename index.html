@@ -47,18 +47,23 @@
                   />
                   <p>каталог таваров</p>
                 </button>
-                <div class="search-form">
+                <form class="search-form">
                   <button class="search-form__btn">
                     <img src="./img/header/search.svg" alt="search" />
                   </button>
                   <input
-                    id="search-input"
+                    required="required"
                     type="text"
                     class="search-form__txt"
                     placeholder="Поиск товаров..."
                   />
-                  <button id="search-control" class="search-control"></button>
-                </div>
+                  <button
+                    type="reset"
+                    id="search-control"
+                    class="search-control"
+                    title="Click me to clear the input field"
+                  ></button>
+                </form>
                 <button class="header__panel-favorites">
                   <img src="./img/header/favorite.svg" alt="favorite" />
                   <p>избранное</p>

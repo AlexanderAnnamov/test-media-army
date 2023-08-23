@@ -177,19 +177,26 @@ function viewDiv() {
   }
 }
 
-// let searchInput = document.querySelector(".search-form__txt");
-// let closeBtn = document.querySelector("#search-control");
+// // let isFocused = document.activeElement === searchInput;
+// // console.log(isFocused);
 
-// let isFocused = document.activeElement === searchInput;
-// console.log(isFocused);
+// let getInput = document.querySelector(".search-form__txt");
+// let clearBtn = document.querySelector("#search-control");
 
-// if (isFocused) {
-//   closeBtn.classList.toggle("search-control");
+// function addBtnClear() {
+//   // let isFocused = document.activeElement === getInput;
+//   // if (isFocused) {
+//   //   clearBtn.classList.add("search-control");
+//   // }
+//   clearBtn.classList.toggle("search-control");
 // }
 
-function cl() {
-  let getInput = doсument.querySelector(".search-form");
-  getInput.value = "";
-}
+// getInput.addEventListener("focus", addBtnClear);
 
-document.getElementById("search-control").addEventListener("click", cl, {});
+// function cleanInput() {
+//   getInput.value = "";
+// }
+
+// document
+//   .getElementById("search-control")
+//   .addEventListener("onfocus", cleanInput, {});

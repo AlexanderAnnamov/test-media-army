@@ -371,11 +371,15 @@ legend {
 	top: 50%;
     transform: translateY(-50%);
 	right: 12px;
-	display: inline-block;
+	display: none;
 	width: 18px;
 	height: 18px;
 	background: url('./img/header/clear-input.svg') center center no-repeat;
 }
+
+.search-form input:valid ~ .search-control[type="reset"] {
+    display: inline-block;
+  }  
 
 .search-form__btn img {
     width: 24px;
