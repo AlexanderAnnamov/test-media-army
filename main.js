@@ -80,8 +80,8 @@ function init() {
   let selectItem = document.querySelectorAll(".select__item");
 
   function setPosition() {
-    (select = this.closest(".select")),
-      (currentText = select.querySelector(".select__current"));
+    (selectCity = this.closest(".select")),
+      (currentText = selectCity.querySelector(".select__current"));
     switch (currentText.innerText) {
       case "Екатеринбург":
         map.setCenter(cities.EKATERINBURG);
@@ -108,9 +108,9 @@ function init() {
 
 // custom select
 
-let select = function () {
+let selectCity = function () {
   let selectHeader = document.querySelectorAll(".select__header");
-  let selectItem = document.querySelectorAll(".select__item");
+  let selectItem = document.querySelectorAll(".city-item");
 
   selectHeader.forEach((item) => {
     item.addEventListener("click", selectToggle);
@@ -126,7 +126,7 @@ let select = function () {
 
   function selectChoose() {
     let text = this.innerText,
-      select = this.closest(".select"),
+      select = this.closest(".select-location"),
       currentText = select.querySelector(".select__current");
     currentText.innerText = text;
     select.classList.remove("is-active");
@@ -148,7 +148,7 @@ let swiper = new Swiper(".mySwiper", {
   keyboard: true,
 });
 
-select();
+selectCity();
 ymaps.ready(init);
 
 // !togle visible password
@@ -176,27 +176,3 @@ function viewDiv() {
     document.body.style.overflow = "hidden";
   }
 }
-
-// // let isFocused = document.activeElement === searchInput;
-// // console.log(isFocused);
-
-// let getInput = document.querySelector(".search-form__txt");
-// let clearBtn = document.querySelector("#search-control");
-
-// function addBtnClear() {
-//   // let isFocused = document.activeElement === getInput;
-//   // if (isFocused) {
-//   //   clearBtn.classList.add("search-control");
-//   // }
-//   clearBtn.classList.toggle("search-control");
-// }
-
-// getInput.addEventListener("focus", addBtnClear);
-
-// function cleanInput() {
-//   getInput.value = "";
-// }
-
-// document
-//   .getElementById("search-control")
-//   .addEventListener("onfocus", cleanInput, {});
