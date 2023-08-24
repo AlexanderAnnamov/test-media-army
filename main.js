@@ -220,14 +220,32 @@ function setVisiblePassword(target) {
 
 // set visible auth
 
-function setVisibleAuth() {
-  let auth = document.getElementById("auth");
+let catalog = document.querySelector(".catalog");
+let imgCatalogBtn = document.querySelector("#img-catalog-btn");
+let auth = document.getElementById("auth");
 
+function setVisibleAuth() {
   if (auth.style.display == "flex") {
     auth.style.display = "none";
-    document.body.style.overflow = "auto";
+    if (!catalog.style.display == "block") {
+      document.body.style.overflow = "auto";
+    }
   } else {
     auth.style.display = "flex";
     document.body.style.overflow = "hidden";
+  }
+}
+
+// set visible catalog
+
+function setVisibleCatalog() {
+  if (catalog.style.display == "block") {
+    catalog.style.display = "none";
+    document.body.style.overflow = "auto";
+    imgCatalogBtn.src = "./img/header/btn-catalog.svg";
+  } else {
+    catalog.style.display = "block";
+    document.body.style.overflow = "hidden";
+    imgCatalogBtn.src = "./img/header/close-catalog.svg";
   }
 }
