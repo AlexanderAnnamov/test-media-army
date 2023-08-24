@@ -35,7 +35,7 @@
                         <div class="select__header select-company-header">
                           <div class="select__items">
                             <span class="select__current-company"
-                              >о компании</span
+                              >О компании</span
                             >
                           </div>
                         </div>
@@ -55,7 +55,31 @@
                         </div>
                       </div>
                     </li>
-                    <li>покупателям</li>
+                    <li>
+                      <div class="select">
+                        <div class="select__header select-company-header">
+                          <div class="select__items">
+                            <span class="select__current-company"
+                              >Покупателям</span
+                            >
+                          </div>
+                        </div>
+                        <div class="select__body-company">
+                          <div id="city" class="select__item company-item">
+                            Цены
+                          </div>
+                          <div id="city" class="select__item company-item">
+                            Скидки
+                          </div>
+                          <div id="city" class="select__item company-item">
+                            Хит-Продаж
+                          </div>
+                          <div id="city" class="select__item company-item">
+                            Сезон-Прайс
+                          </div>
+                        </div>
+                      </div>
+                    </li>
                     <li>поставщикам</li>
                     <li>контакты</li>
                   </ul>
@@ -98,6 +122,487 @@
                 <button onclick="setVisibleAuth()" class="header__panel-signin">
                   <p>войти</p>
                 </button>
+              </div>
+            </div>
+          </div>
+          <div class="catalog">
+            <div class="catalog__container">
+              <div class="catalog__category">
+                <div class="catalog__types-goods">
+                  <ul>
+                    <li>
+                      <button>
+                        <div class="catalog__favourite">
+                          <img src="./img/catalog/topical.svg" alt="topical" />
+                          <p>Актуальные</p>
+                        </div>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <div class="catalog__favourite">
+                          <img
+                            class="catalog__img-favorite"
+                            src="./img/catalog/stock.svg"
+                            alt="stock"
+                          />
+                          <p>Акции</p>
+                        </div>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Новогодние товары</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Галантерея и аксессуары</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Хозтовары</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Праздники и подарки</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Интерьерные товары для дома</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Домашний текстиль</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Творчество</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Туризм и активный отдых</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Товары для рассады</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Игрушки, товары для детей</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Пикник</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Спортивные товары</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Товары для животных</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Интерьерное освещение</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Одежда, обувь, головные уборы</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Снегоуборочный инвентарь</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Бассейны и аксессуары</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Средства гигиены и бытовая химия</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Товары для бани и сауны</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Строительство и ремонт</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                    <li>
+                      <button>
+                        <p>Автотовары</p>
+                        <svg
+                          width="20"
+                          height="20"
+                          viewBox="0 0 20 20"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            d="M8 5.00006L13 10.0001L8 15.0001"
+                            stroke="#8285A5"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div class="catalog__category-goods"></div>
               </div>
             </div>
           </div>
