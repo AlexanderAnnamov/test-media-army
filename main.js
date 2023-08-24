@@ -1,31 +1,60 @@
-// api YaMap
-
-let center = [56.81911640814073, 60.71813354831949];
-let сhernyakhovsky = [56.75167166360553, 60.75666995767255];
-
 // city
 
 const cities = {
-  EKATERINBURG: [56.81911640814073, 60.71813354831949],
-  PETERBURG: [59.934910487611226, 30.372076390685216],
-  MOSKOW: [55.7599352627125, 37.6270555029466],
-  CHELYABINSK: [55.16568660106791, 61.43873868217899],
-  KAZAN: [55.78612625631046, 49.13234342462967],
+  EKATERINBURG: {
+    coordinates: [56.81911640814073, 60.71813354831949],
+    addresses: {
+      chernyakhovsky: [56.75167166360553, 60.75666995767255],
+      blucher: [56.86537049860099, 60.66835145503491],
+    },
+  },
+  PETERBURG: {
+    coordinates: [59.934910487611226, 30.372076390685216],
+    addresses: {
+      chernyakhovsky: [],
+      blucher: [],
+    },
+  },
+  MOSKOW: {
+    coordinates: [55.7599352627125, 37.6270555029466],
+    addresses: {
+      chernyakhovsky: [],
+      blucher: [],
+    },
+  },
+  CHELYABINSK: {
+    coordinates: [55.16568660106791, 61.43873868217899],
+    addresses: {
+      chernyakhovsky: [56.75167166360553, 60.75666995767255],
+      blucher: [56.86537049860099, 60.66835145503491],
+    },
+  },
+  KAZAN: {
+    coordinates: [55.78612625631046, 49.13234342462967],
+    addresses: {
+      chernyakhovsky: [56.75167166360553, 60.75666995767255],
+      blucher: [56.86537049860099, 60.66835145503491],
+    },
+  },
 };
+
+// YaMap
 
 function init() {
   var map = new ymaps.Map(
     "map",
     {
-      center: center,
+      center: cities.EKATERINBURG,
       zoom: 11,
       controls: [],
     },
     { suppressMapOpenBlock: true }
   );
 
-  let placemark = new ymaps.Placemark(
-    [56.75167166360553, 60.75666995767255],
+  // init shops adress
+
+  let shopСhernyakhovsky = new ymaps.Placemark(
+    cities.EKATERINBURG.addresses.chernyakhovsky,
     {},
     {
       iconLayout: "default#image",
@@ -35,8 +64,8 @@ function init() {
     }
   );
 
-  let placemark2 = new ymaps.Placemark(
-    [56.86537049860099, 60.66835145503491],
+  let shopBlucher = new ymaps.Placemark(
+    cities.EKATERINBURG.addresses.blucher,
     {},
     {
       iconLayout: "default#image",
@@ -46,8 +75,12 @@ function init() {
     }
   );
 
-  map.geoObjects.add(placemark);
-  map.geoObjects.add(placemark2);
+  // add shops to map
+
+  map.geoObjects.add(shopСhernyakhovsky);
+  map.geoObjects.add(shopBlucher);
+
+  // zoom for all objects
 
   map
     .setBounds(map.geoObjects.getBounds(), { checkZoomRange: true })
@@ -55,10 +88,13 @@ function init() {
       if (map.getZoom() > 15) map.setZoom(15);
     });
 
-  var el = document.getElementById("show");
-  el.addEventListener("click", showBal, false);
+  // init balloons
+
+  let balloonChernyakhovsky = document.getElementById("show");
+  balloonChernyakhovsky.addEventListener("click", showBal, false);
+
   function showBal() {
-    map.setCenter([56.75167166360553, 60.75666995767255]),
+    map.setCenter(cities.EKATERINBURG.addresses.chernyakhovsky),
       map.balloon.open(
         map.getCenter(),
         { content: "Hello Yandex!" },
@@ -66,16 +102,19 @@ function init() {
       );
   }
 
-  var el2 = document.getElementById("show2");
-  el2.addEventListener("click", showBal2, false);
+  let balloonBlucher = document.getElementById("show2");
+  balloonBlucher.addEventListener("click", showBal2, false);
+
   function showBal2() {
-    map.setCenter([56.86537049860099, 60.66835145503491]),
+    map.setCenter(cities.EKATERINBURG.addresses.blucher),
       map.balloon.open(
         map.getCenter(),
         { content: "Hello Yandex!" },
         { closeButton: true }
       );
   }
+
+  // init url select for map
 
   let selectItem = document.querySelectorAll(".select__item");
 
@@ -84,19 +123,19 @@ function init() {
       (currentText = selectCity.querySelector(".select__current"));
     switch (currentText.innerText) {
       case "Екатеринбург":
-        map.setCenter(cities.EKATERINBURG);
+        map.setCenter(cities.EKATERINBURG.coordinates);
         break;
       case "Санкт-Петербург":
-        map.setCenter(cities.PETERBURG);
+        map.setCenter(cities.PETERBURG.coordinates);
         break;
       case "Москва":
-        map.setCenter(cities.MOSKOW);
+        map.setCenter(cities.MOSKOW.coordinates);
         break;
       case "Казань":
-        map.setCenter(cities.KAZAN);
+        map.setCenter(cities.KAZAN.coordinates);
         break;
       case "Челябинск":
-        map.setCenter(cities.CHELYABINSK);
+        map.setCenter(cities.CHELYABINSK.coordinates);
         break;
     }
   }
@@ -106,10 +145,12 @@ function init() {
   });
 }
 
-// custom select
+ymaps.ready(init);
+
+// custom select location
 
 let selectCity = function () {
-  let selectHeader = document.querySelectorAll(".select__header");
+  let selectHeader = document.querySelectorAll(".select-city-header");
   let selectItem = document.querySelectorAll(".city-item");
 
   selectHeader.forEach((item) => {
@@ -133,6 +174,21 @@ let selectCity = function () {
   }
 };
 
+let selectAboutCompany = function () {
+  let selectHeader = document.querySelectorAll(".select-company-header");
+
+  selectHeader.forEach((item) => {
+    item.addEventListener("click", selectToggle);
+  });
+
+  function selectToggle() {
+    this.parentElement.classList.toggle("is-active");
+  }
+};
+
+selectAboutCompany();
+selectCity();
+
 // swipe panel
 
 let swiper = new Swiper(".mySwiper", {
@@ -148,12 +204,9 @@ let swiper = new Swiper(".mySwiper", {
   keyboard: true,
 });
 
-selectCity();
-ymaps.ready(init);
+// set visible password auth
 
-// !togle visible password
-
-function show_hide_password(target) {
+function setVisiblePassword(target) {
   var input = document.getElementById("password");
   if (input.getAttribute("type") == "password") {
     target.classList.add("view");
@@ -165,7 +218,9 @@ function show_hide_password(target) {
   return false;
 }
 
-function viewDiv() {
+// set visible auth
+
+function setVisibleAuth() {
   let auth = document.getElementById("auth");
 
   if (auth.style.display == "flex") {
