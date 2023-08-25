@@ -218,34 +218,42 @@ function setVisiblePassword(target) {
   return false;
 }
 
-// set visible auth
+// set visible
 
 let catalog = document.querySelector(".catalog");
 let imgCatalogBtn = document.querySelector("#img-catalog-btn");
 let auth = document.getElementById("auth");
 
+// auth
+
 function setVisibleAuth() {
-  if (auth.style.display == "flex") {
-    auth.style.display = "none";
-    if (!catalog.style.display == "block") {
+  if (auth.classList.contains("active")) {
+    auth.classList.remove("active");
+    if (catalog.classList.contains("active")) {
+      document.body.style.overflow = "hidden";
+    } else {
       document.body.style.overflow = "auto";
     }
   } else {
-    auth.style.display = "flex";
+    auth.classList.add("active");
     document.body.style.overflow = "hidden";
   }
 }
 
-// set visible catalog
+// catalog
 
 function setVisibleCatalog() {
-  if (catalog.style.display == "block") {
-    catalog.style.display = "none";
+  if (catalog.classList.contains("active")) {
+    catalog.classList.remove("active");
     document.body.style.overflow = "auto";
     imgCatalogBtn.src = "./img/header/btn-catalog.svg";
   } else {
-    catalog.style.display = "block";
+    catalog.classList.add("active");
     document.body.style.overflow = "hidden";
     imgCatalogBtn.src = "./img/header/close-catalog.svg";
   }
 }
+
+// category
+
+function setVisibleCategory() {}
