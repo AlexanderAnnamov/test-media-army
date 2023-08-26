@@ -204,10 +204,16 @@ let swiper = new Swiper(".mySwiper", {
   keyboard: true,
 });
 
-// set visible password auth
+// set visible
+
+let catalog = document.querySelector(".catalog");
+let imgCatalogBtn = document.querySelector("#img-catalog-btn");
+let auth = document.getElementById("auth");
+let input = document.getElementById("password");
+
+// password auth
 
 function setVisiblePassword(target) {
-  var input = document.getElementById("password");
   if (input.getAttribute("type") == "password") {
     target.classList.add("view");
     input.setAttribute("type", "text");
@@ -217,12 +223,6 @@ function setVisiblePassword(target) {
   }
   return false;
 }
-
-// set visible
-
-let catalog = document.querySelector(".catalog");
-let imgCatalogBtn = document.querySelector("#img-catalog-btn");
-let auth = document.getElementById("auth");
 
 // auth
 
@@ -256,4 +256,26 @@ function setVisibleCatalog() {
 
 // category
 
-function setVisibleCategory() {}
+function categoryMenu() {
+  let catalogItem = document.querySelectorAll(".catalog__item");
+  let catalogLi = document.querySelectorAll(
+    ".catalog__category-news-products ul"
+  );
+
+  function setVisibleCategory() {
+    let id = this.id;
+    catalogLi.forEach(function (e) {
+      e.classList.remove("active");
+      if (id == e.id.substr(0, e.id.indexOf("-"))) {
+        console.log(e);
+        e.classList.add("active");
+      }
+    });
+  }
+
+  catalogItem.forEach((item) => {
+    item.addEventListener("click", setVisibleCategory);
+  });
+}
+
+categoryMenu();

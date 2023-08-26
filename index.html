@@ -135,10 +135,7 @@
                 <div class="catalog__types-goods">
                   <ul>
                     <li>
-                      <button
-                        class="catalog__item catalog__type-item"
-                        onclick="setVisibleCategory()"
-                      >
+                      <button class="catalog__item catalog__type-item">
                         <div class="catalog__favourite">
                           <img src="./img/catalog/topical.svg" alt="topical" />
                           <p>Актуальные</p>
@@ -161,7 +158,10 @@
                       </button>
                     </li>
                     <li>
-                      <button class="catalog__item catalog__type-item">
+                      <button
+                        id="stock"
+                        class="catalog__item catalog__type-item"
+                      >
                         <div class="catalog__favourite">
                           <img
                             class="catalog__img-favorite"
@@ -188,7 +188,10 @@
                       </button>
                     </li>
                     <li>
-                      <button class="catalog__item catalog__type-item">
+                      <button
+                        id="сhristmas"
+                        class="catalog__item catalog__type-item"
+                      >
                         <p>Новогодние товары</p>
                         <svg
                           width="20"
@@ -588,7 +591,10 @@
                       </button>
                     </li>
                     <li>
-                      <button class="catalog__item catalog__type-item">
+                      <button
+                        id="auto"
+                        class="catalog__item catalog__type-item"
+                      >
                         <p>Автотовары</p>
                         <svg
                           width="20"
@@ -612,7 +618,7 @@
                 <div class="catalog__category-goods">
                   <div class="catalog__category-news-products">
                     <button class="catalog__category-news">Новинки</button>
-                    <ul>
+                    <ul class="none" id="сhristmas-products">
                       <li>
                         <button class="catalog__item">
                           <p>Все товары категории</p>
@@ -897,6 +903,174 @@
                       <li>
                         <button class="catalog__item">
                           <p>Предыдущие коллекции</p>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 5.00006L13 10.0001L8 15.0001"
+                              stroke="#8285A5"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </li>
+                    </ul>
+                    <ul class="none" id="stock-products">
+                      <li>
+                        <button class="catalog__item">
+                          <p>Промокоды</p>
+                        </button>
+                      </li>
+
+                      <li>
+                        <button class="catalog__item">
+                          <p>Летняя распродажа</p>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 5.00006L13 10.0001L8 15.0001"
+                              stroke="#8285A5"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </li>
+                      <li>
+                        <button class="catalog__item">
+                          <p>Скидочные купоны</p>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 5.00006L13 10.0001L8 15.0001"
+                              stroke="#8285A5"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </li>
+                      <li>
+                        <button class="catalog__item">
+                          <p>Как получить скидку?</p>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 5.00006L13 10.0001L8 15.0001"
+                              stroke="#8285A5"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </li>
+                      <li>
+                        <button class="catalog__item">
+                          <p>Сюрпризы и подарки</p>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 5.00006L13 10.0001L8 15.0001"
+                              stroke="#8285A5"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </li>
+                      <li>
+                        <button class="catalog__item">
+                          <p>Лотерея билетов</p>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 5.00006L13 10.0001L8 15.0001"
+                              stroke="#8285A5"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </li>
+                      <li>
+                        <button class="catalog__item">
+                          <p>Выгодные цены</p>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 5.00006L13 10.0001L8 15.0001"
+                              stroke="#8285A5"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </li>
+                      <li>
+                        <button class="catalog__item">
+                          <p>Счастливые бонусы</p>
+                          <svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M8 5.00006L13 10.0001L8 15.0001"
+                              stroke="#8285A5"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </li>
+                      <li>
+                        <button class="catalog__item">
+                          <p>Черная пятница</p>
                           <svg
                             width="20"
                             height="20"

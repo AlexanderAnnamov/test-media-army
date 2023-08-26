@@ -470,6 +470,14 @@ legend {
     padding: 0 0 0 36px;
 }
 
+.none {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
 .catalog__category-news-products ul li {
     width: 337px;
 }
