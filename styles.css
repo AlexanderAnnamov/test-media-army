@@ -328,8 +328,8 @@ legend {
 
 .catalog {
     position: absolute;
-    /* left: -500%; */
-    left: 50%;
+    left: -500%;
+    /* left: 50%; */
     transform: translate(-50%);
     top: 110%;
     width: 100vw;
@@ -395,10 +395,6 @@ legend {
     color: #0064D8;
 }
 
-.catalog__types-goods ul li button:focus p {
-    color: #0064D8;
-}
-
  .catalog__types-goods ul li button:focus  svg path {
     stroke: #0064D8;
     stroke-width: 2px;
@@ -428,7 +424,7 @@ legend {
     stroke-width: 2px;
 }
 
-.catalog__types-goods ul li button p {
+.catalog__types-goods ul li button {
     color: var(--label-black, #212328);
     font-family: 'Golos Text';
     font-size: 14px;
@@ -436,7 +432,7 @@ legend {
     line-height: 140%;
 }
 
-.catalog__category-news-products  ul li button p{
+.catalog__category-news-products  ul li button {
     color: var(--label-black, #212328);
     font-family: 'Golos Text';
     font-size: 14px;
@@ -459,6 +455,7 @@ legend {
 }
 
 .catalog__category-goods {
+    padding: 30px 0 0 0;
     flex: 1;
     height: 100%;   
     background-color: #F2F7FD;
@@ -468,8 +465,6 @@ legend {
 }
 
 .catalog__category-news-products {
- 
-
     width: 360px;
     padding: 0 0 0 36px;
 }
@@ -482,12 +477,22 @@ legend {
     display: block;
 }
 
+.active-focus {
+    background-color: #F2F7FD;
+}
+
+.active-focus p, .active-focus svg path {
+    color: #0064D8;
+    stroke: #0064D8;
+    stroke-width: 2px;
+}
+
 .catalog__category-news-products ul li {
     width: 337px;
 }
 
 .catalog__groups-goods {
-    margin: 70.5px 0 0 28px;
+    margin: 41px 0 0 28px;
 }
 
 .catalog__groups-goods ul li button p {
@@ -498,10 +503,18 @@ legend {
     line-height: 140%;
 }
 
+.catalog__groups-goods ul li button {
+    min-height: 40px;
+}
+
+.catalog__groups-goods ul li button p:hover {
+    color: #0064D8;
+}
+
 .catalog__category-news {
     width: 93px;
     height: 36px;
-    margin: 30px 0 5px 0;
+    margin: 0 0 5px 0;
     padding: 8px 16px;
     background-color: #fff;
     border-radius: 10px;

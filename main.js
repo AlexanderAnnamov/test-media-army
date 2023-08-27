@@ -269,14 +269,20 @@ function categoryMenu() {
   let groupItem = document.querySelectorAll(".catalog__groups-goods ul");
 
   function setVisibleCategory() {
-    let id = this.id;
-    console.log(this);
+    let elem = this;
+
+    typeItem.forEach(function (e) {
+      e.classList.remove("active-focus");
+      elem.classList.add("active-focus");
+    });
+
     groupItem.forEach(function (e) {
       e.classList.remove("active");
     });
+
     categoryUl.forEach(function (e) {
       e.classList.remove("active");
-      if (id == e.id.substr(0, e.id.indexOf("-"))) {
+      if (elem.id == e.id.substr(0, e.id.indexOf("-"))) {
         console.log(e.id.substr(0, e.id.indexOf("-")));
         e.classList.add("active");
       }
@@ -284,10 +290,16 @@ function categoryMenu() {
   }
 
   function setVisibleGroup() {
-    let id = this.id;
+    let elem = this;
+
+    categoryItem.forEach(function (e) {
+      e.classList.remove("active-focus");
+      elem.classList.add("active-focus");
+    });
+
     groupItem.forEach(function (e) {
       e.classList.remove("active");
-      if (id == e.id.substr(0, e.id.indexOf("-"))) {
+      if (elem.id == e.id.substr(0, e.id.indexOf("-"))) {
         e.classList.add("active");
       }
     });
