@@ -257,24 +257,48 @@ function setVisibleCatalog() {
 // category
 
 function categoryMenu() {
-  let catalogItem = document.querySelectorAll(".catalog__item");
-  let catalogLi = document.querySelectorAll(
+  let typeItem = document.querySelectorAll(
+    ".catalog__types-goods ul li button"
+  );
+  let categoryUl = document.querySelectorAll(
     ".catalog__category-news-products ul"
   );
+  let categoryItem = document.querySelectorAll(
+    ".catalog__category-news-products ul li button"
+  );
+  let groupItem = document.querySelectorAll(".catalog__groups-goods ul");
 
   function setVisibleCategory() {
     let id = this.id;
-    catalogLi.forEach(function (e) {
+    console.log(this);
+    groupItem.forEach(function (e) {
+      e.classList.remove("active");
+    });
+    categoryUl.forEach(function (e) {
       e.classList.remove("active");
       if (id == e.id.substr(0, e.id.indexOf("-"))) {
-        console.log(e);
+        console.log(e.id.substr(0, e.id.indexOf("-")));
         e.classList.add("active");
       }
     });
   }
 
-  catalogItem.forEach((item) => {
+  function setVisibleGroup() {
+    let id = this.id;
+    groupItem.forEach(function (e) {
+      e.classList.remove("active");
+      if (id == e.id.substr(0, e.id.indexOf("-"))) {
+        e.classList.add("active");
+      }
+    });
+  }
+
+  typeItem.forEach((item) => {
     item.addEventListener("click", setVisibleCategory);
+  });
+
+  categoryItem.forEach((item) => {
+    item.addEventListener("click", setVisibleGroup);
   });
 }
 

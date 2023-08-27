@@ -328,7 +328,8 @@ legend {
 
 .catalog {
     position: absolute;
-    left: -500%;
+    /* left: -500%; */
+    left: 50%;
     transform: translate(-50%);
     top: 110%;
     width: 100vw;
@@ -462,10 +463,13 @@ legend {
     height: 100%;   
     background-color: #F2F7FD;
     overflow: auto;
+    display: flex;
 
 }
 
 .catalog__category-news-products {
+ 
+
     width: 360px;
     padding: 0 0 0 36px;
 }
@@ -480,6 +484,18 @@ legend {
 
 .catalog__category-news-products ul li {
     width: 337px;
+}
+
+.catalog__groups-goods {
+    margin: 70.5px 0 0 28px;
+}
+
+.catalog__groups-goods ul li button p {
+    color:#212328;
+    font-family: 'Golos Text';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 140%;
 }
 
 .catalog__category-news {
