@@ -174,6 +174,8 @@ let selectCity = function () {
   }
 };
 
+// custom select about company
+
 let selectAboutCompany = function () {
   let selectHeader = document.querySelectorAll(".select-company-header");
 
@@ -288,6 +290,8 @@ function categoryMenu() {
       }
     });
   }
+
+  // group
 
   function setVisibleGroup() {
     let elem = this;
