@@ -1224,6 +1224,10 @@ body::-webkit-scrollbar { width: 0; }
 
   /* ie 10+ */
 body { -ms-overflow-style: none; }
+
+/* adaptive */
+
+
   
 
 
