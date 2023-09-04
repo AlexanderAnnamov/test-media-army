@@ -143,6 +143,10 @@ legend {
     white-space: nowrap;
 }
 
+.header__table-btns {
+    display: none;
+}
+
 .header__panel {
     width: 1258px;
     display: flex;
@@ -1225,7 +1229,62 @@ body::-webkit-scrollbar { width: 0; }
   /* ie 10+ */
 body { -ms-overflow-style: none; }
 
-/* adaptive */
+/* adaptive table */
+
+@media (max-width: 744px) {
+    .wrapper {
+        padding: 10px 32px 60px;
+    }
+   
+    .header__panel{
+        display: none;
+    }
+
+    .header__row {
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header__table-btns {
+        display: flex;
+        align-items: center;
+        column-gap: 6px;
+    }
+
+    .header__table-btns button {
+        padding: 10px;
+        border-radius: 10px;
+        background: var(--bg-light-blue, #F2F7FD);
+    }
+
+    .header__logo {
+        padding: 16px 0;
+    }
+    
+    .header__logo-title {
+        font-family: 'Bebas Neue';
+        font-size: 35.304px;
+        font-weight: 400;
+        line-height: 90%; /* 35.304px */
+        text-transform: uppercase;
+    }
+    
+    .header__logo-description {
+        font-family: 'Golos Text';
+        font-size: 7.304px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 10%; /* 35.304px */
+        letter-spacing: 0.292px;
+        text-transform: uppercase;
+    }
+
+    .header__row {
+        max-height: 50px;
+    }
+    
+   
+}
 
 
   
