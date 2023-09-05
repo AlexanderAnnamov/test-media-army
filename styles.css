@@ -206,6 +206,10 @@ legend {
     cursor: pointer;
 }
 
+.adaptive-small-display {
+    display: none;
+}
+
 .header__panel-nav ul li:hover {
     color: #0064D8;
 }
@@ -220,6 +224,12 @@ legend {
 
 .header__panel-control {
     display: flex;
+    align-items: center;
+}
+
+.header__adaptive-btns {
+    display: flex;
+    align-items: center;
 }
 
 .header__panel-catalog {
@@ -642,11 +652,13 @@ legend {
     align-items: center;
     justify-content: space-between;
     column-gap: 20px;
-    flex-wrap: wrap;
+    flex-wrap: no-wrap;
+    overflow-x: hidden;
     row-gap: 20px;
 }
 
 .achievements__item {
+    max-height: 80px;
     display: flex;
     flex: 1;    
     align-items: center;
@@ -757,6 +769,13 @@ legend {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.novelties__adaptive {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    column-gap: 20px;
 }
 
 /* banner */
@@ -1229,20 +1248,76 @@ body::-webkit-scrollbar { width: 0; }
   /* ie 10+ */
 body { -ms-overflow-style: none; }
 
+/* adaptive layout 1348 */
+
+@media (max-width: 1348px) {
+    .wrapper {
+        padding: 10px 100px 60px;
+    }
+}
+
+/* adaptive layout search none */
+
+@media (max-width: 1108px) {
+   .search-form {
+    display: none;
+   }
+   .header__panel-control {
+    justify-content: space-between;
+
+   }
+}
+
+/* adaptive layout el header-nav none */
+
+@media (max-width: 994px) {
+    .header__panel-nav ul li:first-child{
+        display: none;
+    }
+}
+
+/* adaptive layout el header-nav, btns none */
+
+@media (max-width: 900px) {
+    .header__panel-nav ul li:nth-child(2){
+        display: none;
+    }
+
+    .header__adaptive-btns button:nth-child(-n+2){
+        display: none;
+    }
+}
+
 /* adaptive table */
 
 @media (max-width: 744px) {
     .wrapper {
-        padding: 10px 32px 60px;
+        padding: 10px 0 60px;
+    }
+
+    .swiper-button-prev, .swiper-button-next {
+        display: none !important;
+    }
+
+    .swiper-slide  {
+        padding: 0 32px;
+    }
+
+    .achievements__row{
+        height: 70px;
+        padding: 0 0 0 32px;
+    }
+
+    .header__container {
+        padding: 0 16px
+    }
+
+    .novelties__container {
+        padding: 0 32px
     }
    
     .header__panel{
         display: none;
-    }
-
-    .header__row {
-        align-items: center;
-        justify-content: space-between;
     }
 
     .header__table-btns {
@@ -1260,7 +1335,7 @@ body { -ms-overflow-style: none; }
     .header__logo {
         padding: 16px 0;
     }
-    
+
     .header__logo-title {
         font-family: 'Bebas Neue';
         font-size: 35.304px;
@@ -1281,8 +1356,93 @@ body { -ms-overflow-style: none; }
 
     .header__row {
         max-height: 50px;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .line-separator{
+        margin-top: 10px;
+    }
+
+    .adaptive-small-display {
+        display: block;
+    }
+
+    li.achievements__item {
+        max-width: 210px;
+        max-height: 52px;
+        padding: 6px 20px 10px;
+        column-gap: 11px;
+        min-width: 210px;
+     
+    }
+        
+    .achievements__item p{
+        min-width: 135px;
+        max-width: 100px;
+        color:#212328;
+        font-family: 'Golos Text';
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 140%; 
+    }
+
+    .achievements__item:last-child p{
+        min-width: 145px;
+        max-width: 100px;
+        color:#212328;
+        font-family: 'Golos Text';
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 140%; 
     }
     
+    .achievements__item img {
+        width: 32px;
+        height: 32px;
+    } 
+    
+    .novelties__title {
+        color: #212328;
+        font-family: 'Golos Text';
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 100%; /* 28px */
+        letter-spacing: -0.42px;
+    }
+
+    /* .novelties__small-cards {
+        flex-wrap: wrap;
+    } */
+
+   
+
+    .novelties__small-card img {
+        flex-basis: 40%;
+    }
+
+    .novelties__small-card img {
+        width: 158px;
+        height: 158px;
+    }
+
+    .novelties__adaptive {
+        flex-direction: column;
+       
+    }
+
+    .novelties__big-card {
+        min-width: 50%;
+
+    }
+    
+    .novelties__big-card img{
+       width: 100%;
+       height: 100%;
+    }
+
+
    
 }
 

@@ -129,17 +129,22 @@
                     title="Click me to clear the input field"
                   ></button>
                 </form>
-                <button class="header__panel-favorites">
-                  <img src="./img/header/favorite.svg" alt="favorite" />
-                  <p>избранное</p>
-                </button>
-                <button class="header__panel-basket">
-                  <img src="./img/header/basket.svg" alt="basket" />
-                  <p>корзина</p>
-                </button>
-                <button onclick="setVisibleAuth()" class="header__panel-signin">
-                  <p>войти</p>
-                </button>
+                <div class="header__adaptive-btns">
+                  <button class="header__panel-favorites">
+                    <img src="./img/header/favorite.svg" alt="favorite" />
+                    <p>избранное</p>
+                  </button>
+                  <button class="header__panel-basket">
+                    <img src="./img/header/basket.svg" alt="basket" />
+                    <p>корзина</p>
+                  </button>
+                  <button
+                    onclick="setVisibleAuth()"
+                    class="header__panel-signin"
+                  >
+                    <p>войти</p>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -1201,6 +1206,7 @@
           </div>
         </div>
       </header>
+      <hr class="adaptive-small-display line-separator" />
       <div class="swiper mySwiper">
         <div class="swiper-button-prev"></div>
         <div class="swiper-wrapper">
@@ -1255,28 +1261,32 @@
             </button>
             <div class="novelties__column-cards">
               <div class="novelties__small-cards">
-                <button class="novelties__small-card">
-                  <img src="./img/novelties/beach.png" alt="beach" />
-                  <p>пляжные товары</p>
-                </button>
-                <button class="novelties__small-card">
-                  <img
-                    src="./img/novelties/home-textiles.png"
-                    alt="home-textiles"
-                  />
-                  <p>домашний текстиль</p>
-                </button>
-                <button class="novelties__small-card">
-                  <img
-                    src="./img/novelties/haber-access.png"
-                    alt="haber-access"
-                  />
-                  <p>галантерея и аксессуары</p>
-                </button>
-                <button class="novelties__small-card">
-                  <img src="./img/novelties/hygiene.png" alt="beach" />
-                  <p>средства гигиены и бытовая химия</p>
-                </button>
+                <div class="novelties__adaptive">
+                  <button class="novelties__small-card">
+                    <img src="./img/novelties/beach.png" alt="beach" />
+                    <p>пляжные товары</p>
+                  </button>
+                  <button class="novelties__small-card">
+                    <img
+                      src="./img/novelties/home-textiles.png"
+                      alt="home-textiles"
+                    />
+                    <p>домашний текстиль</p>
+                  </button>
+                </div>
+                <div class="novelties__adaptive">
+                  <button class="novelties__small-card">
+                    <img
+                      src="./img/novelties/haber-access.png"
+                      alt="haber-access"
+                    />
+                    <p>галантерея и аксессуары</p>
+                  </button>
+                  <button class="novelties__small-card">
+                    <img src="./img/novelties/hygiene.png" alt="beach" />
+                    <p>средства гигиены и бытовая химия</p>
+                  </button>
+                </div>
               </div>
               <div class="novelties__small-cards">
                 <button class="novelties__small-card">

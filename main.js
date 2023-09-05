@@ -320,4 +320,29 @@ function categoryMenu() {
 
 categoryMenu();
 
-// correct a
+// scroll achievements
+
+const achievements = document.querySelector(".achievements__row");
+
+achievements.onmousemove = mousemove;
+achievements.onmousedown = function (e) {
+  e = e || window.event;
+  down = 1;
+  x = e.clientX;
+  y = e.clientY;
+};
+
+document.onmouseup = function (e) {
+  e = e || window.event;
+  down = 0;
+};
+
+function mousemove(e) {
+  if (down == 1) {
+    if (x && y) {
+      achievements.scrollBy(x - e.clientX, y - e.clientY);
+    }
+    x = e.clientX;
+    y = e.clientY;
+  }
+}
