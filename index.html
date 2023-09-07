@@ -139,7 +139,7 @@
                     <p>корзина</p>
                   </button>
                   <button
-                    onclick="setVisibleAuth()"
+                    onclick="setVisibleAuth(this)"
                     class="header__panel-signin"
                   >
                     <p>войти</p>
@@ -1253,123 +1253,130 @@
         </div>
       </div>
       <div class="novelties">
+        <h2 class="novelties__title">наши новинки</h2>
         <div class="novelties__container">
-          <h2 class="novelties__title">наши новинки</h2>
-          <div class="novelties__row">
-            <button class="novelties__big-card">
-              <img src="./img/novelties/interior.png" alt="interior" />
-            </button>
-            <div class="novelties__column-cards">
-              <div class="novelties__small-cards">
-                <div class="novelties__adaptive">
-                  <button class="novelties__small-card">
-                    <img src="./img/novelties/beach.png" alt="beach" />
-                    <p>пляжные товары</p>
-                  </button>
-                  <button class="novelties__small-card">
-                    <img
-                      src="./img/novelties/home-textiles.png"
-                      alt="home-textiles"
-                    />
-                    <p>домашний текстиль</p>
-                  </button>
-                </div>
-                <div class="novelties__adaptive">
-                  <button class="novelties__small-card">
-                    <img
-                      src="./img/novelties/haber-access.png"
-                      alt="haber-access"
-                    />
-                    <p>галантерея и аксессуары</p>
-                  </button>
-                  <button class="novelties__small-card">
-                    <img src="./img/novelties/hygiene.png" alt="beach" />
-                    <p>средства гигиены и бытовая химия</p>
-                  </button>
-                </div>
-              </div>
-              <div class="novelties__small-cards">
-                <button class="novelties__small-card">
-                  <img src="./img/novelties/holidays.png" alt="beach" />
-                  <p>праздники и подарки</p>
-                </button>
-                <button class="novelties__small-card">
-                  <img src="./img/novelties/household-goods.png" alt="beach" />
-                  <p>хозтовары</p>
-                </button>
-                <button class="novelties__small-card">
-                  <img src="./img/novelties/sports.png" alt="beach" />
-                  <p>спортивные товары</p>
-                </button>
-                <button class="novelties__small-card">
-                  <img src="./img/novelties/pets.png" alt="beach" />
-                  <p>товары для животных</p>
-                </button>
-              </div>
-            </div>
-          </div>
+          <button class="box1 grid-big">
+            <img src="./img/novelties/interior.png" alt="interior" />
+          </button>
+          <button class="box2 grid">
+            <img src="./img/novelties/beach.png" alt="beach" />
+            <p>пляжные товары</p>
+          </button>
+          <button class="box3 grid">
+            <img src="./img/novelties/holidays.png" alt="holidays" />
+            <p>праздники и подарки</p>
+          </button>
+          <button class="box4 grid">
+            <img src="./img/novelties/home-textiles.png" alt="home-textiles" />
+            <p>домашний текстиль</p>
+          </button>
+          <button class="box5 grid">
+            <img
+              src="./img/novelties/household-goods.png"
+              alt="household-goods"
+            />
+            <p>хозтовары</p>
+          </button>
+          <button class="box6 grid">
+            <img src="./img/novelties/haber-access.png" alt="haber-access" />
+            <p>галантерея и аксессуары</p>
+          </button>
+          <button class="box7 grid">
+            <img src="./img/novelties/sports.png" alt="sports" />
+            <p>спортивные товары</p>
+          </button>
+          <button class="box8 grid">
+            <img src="./img/novelties/hygiene.png" alt="hygiene" />
+            <p>средства гигиены и бытовая химия</p>
+          </button>
+          <button class="box9 grid">
+            <img src="./img/novelties/pets.png" alt="pets" />
+            <p>товары для животных</p>
+          </button>
         </div>
       </div>
-      <div class="banner"><img src="./img/banner/banner.png" alt="" /></div>
+      <div class="banner">
+        <div class="banner__container"></div>
+      </div>
       <div class="shops">
         <div class="shops__container">
-          <div class="shops__row">
-            <div class="shops__address">
-              <div class="shops__title"><h2>магазины</h2></div>
-              <div class="select select-location">
-                <div class="select__header select-city-header">
-                  <div class="select__items">
-                    <div class="select__city">Город</div>
-                    <span class="select__current">Екатеринбург</span>
-                  </div>
+          <h2 class="shops__title">Магазины</h2>
+          <div class="select-grid">
+            <div class="select select-location">
+              <div class="select__header select-city-header">
+                <div class="select__items">
+                  <div class="select__city">Город</div>
+                  <span class="select__current">Екатеринбург</span>
+                </div>
 
-                  <img
-                    src="./img/shops/arrow-bottom.svg"
-                    alt="arrow-bottom"
-                    class="select__icon"
-                  />
-                </div>
-                <div class="select__body">
-                  <div id="city" class="select__item city-item">Москва</div>
-                  <div id="city" class="select__item city-item">
-                    Санкт-Петербург
-                  </div>
-                  <div id="city" class="select__item city-item">Челябинск</div>
-                  <div id="city" class="select__item city-item">Казань</div>
-                  <div id="city" class="select__item city-item">
-                    Екатеринбург
-                  </div>
-                </div>
+                <img
+                  src="./img/shops/arrow-bottom.svg"
+                  alt="arrow-bottom"
+                  class="select__icon"
+                />
               </div>
-              <hr class="line-separator" />
-              <button id="show">
-                <h2>Магазин на Черняховского</h2>
-                <ul>
-                  <li>улица Черняховского, 99</li>
-                  <li>+7 (999) 012-34-56</li>
-                  <li>Ежедневно с 09:00 до 22:00</li>
-                </ul>
-              </button>
-              <hr class="line-separator" />
-              <button id="show2">
-                <h2>Магазин на Блюхера</h2>
-                <ul>
-                  <li>улица Блюхера, 99</li>
-                  <li>+7 (999) 012-34-56 (доб. 02)</li>
-                  <li>Ежедневно с 10:00 до 21:00</li>
-                </ul>
-              </button>
+              <div class="select__body">
+                <div id="city" class="select__item city-item">Москва</div>
+                <div id="city" class="select__item city-item">
+                  Санкт-Петербург
+                </div>
+                <div id="city" class="select__item city-item">Челябинск</div>
+                <div id="city" class="select__item city-item">Казань</div>
+                <div id="city" class="select__item city-item">Екатеринбург</div>
+              </div>
             </div>
-            <div class="shops__map" id="map"></div>
           </div>
+          <hr class="line-separator select-line" />
+          <div class="show-line">
+            <button id="show">
+              <h2>Магазин на Черняховского</h2>
+              <ul>
+                <li>улица Черняховского, 99</li>
+                <li>+7 (999) 012-34-56</li>
+                <li>Ежедневно с 09:00 до 22:00</li>
+              </ul>
+            </button>
+          </div>
+          <hr class="line-separator shop-line" />
+          <button id="show2">
+            <h2>Магазин на Блюхера</h2>
+            <ul>
+              <li>улица Блюхера, 99</li>
+              <li>+7 (999) 012-34-56 (доб. 02)</li>
+              <li>Ежедневно с 10:00 до 21:00</li>
+            </ul>
+          </button>
+          <div class="shops__map" id="map"></div>
         </div>
+      </div>
+      <div class="navbar">
+        <button class="nav__el">
+          <img src="./img/navbar/home.svg" alt="home" />
+          <p>Главная</p>
+        </button>
+        <button class="nav__el">
+          <img src="./img/navbar/catalog.svg" alt="catalog" />
+          <p>Каталог</p>
+        </button>
+        <button class="nav__el">
+          <img src="./img/navbar/basket.svg" alt="basket" />
+          <p>Корзина</p>
+        </button>
+        <button class="nav__el">
+          <img src="./img/navbar/favorites.svg" alt="favorites" />
+          <p>Избранное</p>
+        </button>
+        <button onclick="setVisibleAuth(this)" class="nav__el">
+          <img src="./img/navbar/singin.svg" alt="singin" />
+          <p>Войти</p>
+        </button>
       </div>
     </div>
     <div id="auth" class="auth">
       <div class="auth__modal">
         <div class="auth__header">
           <h2 class="auth__title">вход</h2>
-          <button onclick="setVisibleAuth()" class="auth__close">
+          <button onclick="setVisibleAuth(this)" class="auth__close">
             <img src="./img/icons/close-btn.svg" alt="" />
           </button>
         </div>

@@ -212,6 +212,8 @@ let catalog = document.querySelector(".catalog");
 let imgCatalogBtn = document.querySelector("#img-catalog-btn");
 let auth = document.getElementById("auth");
 let input = document.getElementById("password");
+let authActive = document.querySelector(".active");
+let wrapper = document.querySelector(".wrapper");
 
 // password auth
 
@@ -228,7 +230,17 @@ function setVisiblePassword(target) {
 
 // auth
 
-function setVisibleAuth() {
+let rootElement = document.documentElement;
+
+function scrollToTop() {
+  rootElement.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+
+function setVisibleAuth(elem) {
+  scrollToTop();
   if (auth.classList.contains("active")) {
     auth.classList.remove("active");
     if (catalog.classList.contains("active")) {
@@ -346,3 +358,29 @@ function mousemove(e) {
     y = e.clientY;
   }
 }
+
+///
+
+let lastScroll = 0;
+const defaultOffset = 100;
+const navbar = document.querySelector(".navbar");
+
+const scrollPosition = () =>
+  window.pageYOffset || document.documentElement.scrollTop;
+const containHide = () => navbar.classList.contains("hide");
+
+window.addEventListener("scroll", () => {
+  if (
+    scrollPosition() > lastScroll &&
+    !containHide() &&
+    scrollPosition() > defaultOffset
+  ) {
+    //scroll down
+    navbar.classList.add("hide");
+  } else if (scrollPosition() < lastScroll && containHide()) {
+    //scroll up
+    navbar.classList.remove("hide");
+  }
+
+  lastScroll = scrollPosition();
+});
