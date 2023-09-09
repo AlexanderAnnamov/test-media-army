@@ -32,8 +32,12 @@
               <button>
                 <img src="./img/header/table-search.svg" alt="table-search" />
               </button>
-              <button>
-                <img src="./img/header/table-burger.svg" alt="table-burger" />
+              <button id="btn-visible-menu" onclick="setVisibleMenu()">
+                <img
+                  id="visible-menu"
+                  src="./img/header/table-burger.svg"
+                  alt="table-burger"
+                />
               </button>
             </div>
             <div class="header__panel">
@@ -1207,20 +1211,105 @@
         </div>
       </header>
       <hr class="adaptive-small-display line-separator" />
+      <div class="adaptiv-menu">
+        <div class="adaptiv-menu__container">
+          <button class="adaptiv-menu__location">
+            <div class="adaptiv-menu__city">
+              <img src="./img/header/location.svg" alt="" />
+              <p>Екатеринбург</p>
+            </div>
+            <img src="./img/catalog/arrow-right.svg" alt="" />
+          </button>
+          <button class="adaptiv-menu__catalog">
+            <p>Каталог товаров</p>
+            <img src="./img/catalog/catalog-products.png" alt="" />
+          </button>
+          <div class="adaptiv-menu__chapter">
+            <h2>О компании</h2>
+            <p>О нас</p>
+            <hr class="line-separator" />
+            <p>Новости</p>
+            <hr class="line-separator" />
+            <p>Поставщикам</p>
+            <hr class="line-separator" />
+            <p>Отзывы</p>
+            <hr class="line-separator" />
+            <p>Вакансии</p>
+            <hr class="line-separator" />
+            <p>Реквизиты</p>
+            <hr class="line-separator" />
+            <p>Контакты</p>
+          </div>
+          <div class="adaptiv-menu__chapter">
+            <h2>Покупателям</h2>
+            <p>Заключение договора</p>
+            <hr class="line-separator" />
+            <p>Доставка</p>
+            <hr class="line-separator" />
+            <p>Оплата</p>
+            <hr class="line-separator" />
+            <p>Получение товара</p>
+            <hr class="line-separator" />
+            <p>Возврат товара</p>
+            <hr class="line-separator" />
+            <p>Магазины</p>
+          </div>
+          <div class="adaptiv-menu__numbers">
+            <p>8 804 333-86-11</p>
+            <p>8 (343) 310-22-66</p>
+          </div>
+          <p class="adaptiv-menu__adress">
+            Екатеринбург, ул. Черняховского, 99
+          </p>
+          <div class="adaptiv-menu__contact-btns">
+            <button class="adaptiv-menu__contact-btn">
+              <img src="./img/contacts/vk.svg" alt="" /></button
+            ><button class="adaptiv-menu__contact-btn">
+              <img src="./img/contacts/ok.svg" alt="" /></button
+            ><button class="adaptiv-menu__contact-btn">
+              <img src="./img/contacts/tg.svg" alt="" /></button
+            ><button class="adaptiv-menu__contact-btn">
+              <img src="./img/contacts/wp.svg" alt="" />
+            </button>
+          </div>
+        </div>
+      </div>
       <div class="swiper mySwiper">
         <div class="swiper-button-prev"></div>
         <div class="swiper-wrapper">
           <div class="swiper-slide">
-            <img src="./img/slider/slide-holi-season.png" />
+            <img class="swiper-img" src="./img/slider/slide-holi-season.png" />
+            <img
+              src="./img/slider/slide-season-mobile.png"
+              alt="slide-season-mobile"
+              class="swiper-mobile"
+            />
+          </div>
+
+          <div class="swiper-slide">
+            <img class="swiper-img" src="./img/slider/slide-melt-prices.png" />
+            <img
+              src="./img/slider/slide-prices-mobile.png"
+              alt="slide-season-mobile"
+              class="swiper-mobile"
+            />
           </div>
           <div class="swiper-slide">
-            <img src="./img/slider/slide-melt-prices.png" />
+            <img class="swiper-img" src="./img/slider/slide-holi-season.png" />
+            <img
+              src="./img/slider/slide-season-mobile.png"
+              alt="slide-season-mobile"
+              class="swiper-mobile"
+            />
           </div>
+
           <div class="swiper-slide">
-            <img src="./img/slider/slide-holi-season.png" />
-          </div>
-          <div class="swiper-slide">
-            <img src="./img/slider/slide-melt-prices.png" />
+            <img class="swiper-img" src="./img/slider/slide-melt-prices.png" />
+            <img
+              src="./img/slider/slide-prices-mobile.png"
+              alt="slide-season-mobile"
+              class="swiper-mobile"
+            />
           </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -1270,6 +1359,14 @@
             <img src="./img/novelties/home-textiles.png" alt="home-textiles" />
             <p>домашний текстиль</p>
           </button>
+          <button class="box6 grid">
+            <img src="./img/novelties/haber-access.png" alt="haber-access" />
+            <p>галантерея и аксессуары</p>
+          </button>
+          <button class="box8 grid">
+            <img src="./img/novelties/hygiene.png" alt="hygiene" />
+            <p>средства гигиены и бытовая химия</p>
+          </button>
           <button class="box5 grid">
             <img
               src="./img/novelties/household-goods.png"
@@ -1277,18 +1374,12 @@
             />
             <p>хозтовары</p>
           </button>
-          <button class="box6 grid">
-            <img src="./img/novelties/haber-access.png" alt="haber-access" />
-            <p>галантерея и аксессуары</p>
-          </button>
+
           <button class="box7 grid">
             <img src="./img/novelties/sports.png" alt="sports" />
             <p>спортивные товары</p>
           </button>
-          <button class="box8 grid">
-            <img src="./img/novelties/hygiene.png" alt="hygiene" />
-            <p>средства гигиены и бытовая химия</p>
-          </button>
+
           <button class="box9 grid">
             <img src="./img/novelties/pets.png" alt="pets" />
             <p>товары для животных</p>

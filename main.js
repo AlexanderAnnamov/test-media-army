@@ -268,6 +268,27 @@ function setVisibleCatalog() {
   }
 }
 
+// adaptive-menu
+
+const adaptiveMenu = document.querySelector(".adaptiv-menu");
+const imgAdaptiveMenuBtn = document.querySelector("#visible-menu");
+const btnVisibleMenu = document.querySelector("#btn-visible-menu");
+const novelties = document.querySelector(".novelties");
+
+function setVisibleMenu() {
+  if (adaptiveMenu.classList.contains("active")) {
+    adaptiveMenu.classList.remove("active");
+    imgAdaptiveMenuBtn.src = "./img/header/table-burger.svg";
+    btnVisibleMenu.style.backgroundColor = "#F2F7FD";
+    novelties.style.display = "block";
+  } else {
+    adaptiveMenu.classList.add("active");
+    imgAdaptiveMenuBtn.src = "./img/header/close-catalog.svg";
+    btnVisibleMenu.style.backgroundColor = "#0064D8";
+    novelties.style.display = "none";
+  }
+}
+
 // category
 
 function categoryMenu() {
@@ -297,7 +318,8 @@ function categoryMenu() {
     categoryUl.forEach(function (e) {
       e.classList.remove("active");
       if (elem.id == e.id.substr(0, e.id.indexOf("-"))) {
-        console.log(e.id.substr(0, e.id.indexOf("-")));
+        console.log("===", e.id.substr(0, e.id.indexOf("-")).length);
+        console.log("==", elem.id.length);
         e.classList.add("active");
       }
     });
