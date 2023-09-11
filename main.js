@@ -40,7 +40,7 @@ const cities = {
 
 // YaMap
 
-function init() {
+ymaps.ready(function () {
   var map = new ymaps.Map(
     "map",
     {
@@ -51,18 +51,170 @@ function init() {
     { suppressMapOpenBlock: true }
   );
 
+  var btnLocation = new ymaps.control.Button({
+    options: {
+      layout: ymaps.templateLayoutFactory.createClass(
+        "<div class='customLocationBtn'><div/>"
+      ),
+      maxWidth: 150,
+    },
+  });
+  btnLocation.events.add("click", function (event) {
+    var geolocation = ymaps.geolocation;
+    geolocation
+      .get({
+        provider: "browser",
+        mapStateAutoApply: true,
+      })
+      .then(function (result) {
+        result.geoObjects.options.set("preset", "islands#blueCircleIcon");
+        map.geoObjects.add(result.geoObjects);
+      });
+  });
+  map.controls.add(btnLocation, {
+    float: "none",
+    position: {
+      bottom: "270px",
+      right: "12px",
+    },
+  });
+
+  var btnPlus = new ymaps.control.Button({
+    options: {
+      layout: ymaps.templateLayoutFactory.createClass(
+        "<div class='customZoomBtn plus'><div/>"
+      ),
+      maxWidth: 150,
+    },
+  });
+  map.controls.add(btnPlus, {
+    float: "none",
+    position: {
+      bottom: "365px",
+      right: "12px",
+    },
+  });
+
+  btnPlus.events.add("click", function (event) {
+    map.setZoom(map.getZoom() + 1, {
+      duration: 500,
+    });
+  });
+
+  var btnMinus = new ymaps.control.Button({
+    options: {
+      layout: ymaps.templateLayoutFactory.createClass(
+        "<div class='customZoomBtn minus'><div/>"
+      ),
+      maxWidth: 150,
+    },
+  });
+  map.controls.add(btnMinus, {
+    float: "none",
+    position: {
+      bottom: "320px",
+      right: "12px",
+    },
+  });
+  btnMinus.events.add("click", function (event) {
+    console.log("click btn minus");
+    map.setZoom(map.getZoom() - 1, {
+      duration: 500,
+    });
+  });
+
   // init shops adress
 
-  let shopСhernyakhovsky = new ymaps.Placemark(
+  (MyBalloonLayout = ymaps.templateLayoutFactory.createClass(
+    '<div class="popover top">' +
+      '<a class="close" href="#"><img src="./img/icons/close-btn.svg"></a>' +
+      '<div class="arrows"></div>' +
+      '<div class="popover-inner">' +
+      "$[[options.contentLayout observeSize minWidth=440 maxWidth=440 maxHeight=350]]" +
+      "</div>" +
+      "</div>",
+    {
+      build: function () {
+        this.constructor.superclass.build.call(this);
+
+        this._element = this.getParentElement().querySelector(".popover");
+        this._onCloseClick = this.onCloseClick.bind(this);
+
+        this.applyElementOffset();
+
+        this._element
+          .querySelector(".close")
+          .addEventListener("click", this._onCloseClick);
+      },
+
+      clear: function () {
+        this._element
+          .querySelector(".close")
+          .removeEventListener("click", this._onClickClick);
+
+        this.constructor.superclass.clear.call(this);
+      },
+
+      onSublayoutSizeChange: function () {
+        MyBalloonLayout.superclass.onSublayoutSizeChange.apply(this, arguments);
+
+        if (!this._isElement(this._element)) {
+          return;
+        }
+
+        this.applyElementOffset();
+
+        this.events.fire("shapechange");
+      },
+
+      applyElementOffset: function () {
+        Object.assign(this._element.style, {
+          left: -(this._element.offsetWidth / 2) + "px",
+          top:
+            -(
+              this._element.offsetHeight +
+              this._element.querySelector(".arrows").offsetHeight
+            ) + "px",
+        });
+      },
+      onCloseClick: function (e) {
+        e.preventDefault();
+
+        this.events.fire("userclose");
+      },
+
+      _isElement: function (element) {
+        return element && element.querySelector(".arrows");
+      },
+    }
+  )),
+    (MyBalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+      '<div class="balloon-header"><h3>Магазин на Черняховского</h3></div>' +
+        '<ul class="balloon-body"><li>улица Черняховского, 99</li><li>+7 (999) 012-34-56<li>Ежедневно с 09:00 до 22:00</li></li></ul>' +
+        '<button class="route">Построить маршрут</button>' +
+        '<div class="links-map"><a target="blank" href="https://yandex.by/maps/157/minsk/?ll=27.555691%2C53.902735&mode=routes&rtext=&rtt=auto&z=12"><img src="./img/map/yandex-navigator.svg"></img></a><a target="blank" href="https://maps.google.com"><img src="./img/map/google-maps.svg"></img></a></div>'
+    ));
+
+  shopСhernyakhovsky = window.shopСhernyakhovsky = new ymaps.Placemark(
     cities.EKATERINBURG.addresses.chernyakhovsky,
-    {},
+    { balloonContent: "Это красивая метка" },
     {
       iconLayout: "default#image",
       iconImageHref: "./img/map/placemark.svg",
       iconImageSize: [48, 54],
       iconImageOffset: [-19, -44],
+      balloonShadow: false,
+      hideIconOnBalloonOpen: false,
+      balloonLayout: MyBalloonLayout,
+      balloonContentLayout: MyBalloonContentLayout,
+      balloonPanelMaxMapArea: 0,
+      balloonOffset: [-220, -120],
     }
   );
+
+  shopСhernyakhovsky.events.add("click", function () {
+    map.setCenter(cities.EKATERINBURG.addresses.chernyakhovsky);
+  });
 
   let shopBlucher = new ymaps.Placemark(
     cities.EKATERINBURG.addresses.blucher,
@@ -143,9 +295,9 @@ function init() {
   selectItem.forEach((item) => {
     item.addEventListener("click", setPosition);
   });
-}
+});
 
-ymaps.ready(init);
+// ymaps.ready(init);
 
 // custom select location
 
@@ -285,23 +437,68 @@ function setVisibleMenu() {
     adaptiveMenu.classList.add("active");
     imgAdaptiveMenuBtn.src = "./img/header/close-catalog.svg";
     btnVisibleMenu.style.backgroundColor = "#0064D8";
-    novelties.style.display = "none";
+    setTimeout(() => {
+      novelties.style.display = "none";
+    }, 600);
   }
+}
+
+// adaptive-catalog
+
+const adaptiveCatalog = document.querySelector(".adaptiv-catalog");
+let adaptiveCategoriesUl = document.querySelectorAll(
+  ".adaptiv-category-items .adaptiv-category"
+);
+let adaptiveCategory = document.querySelector(".adaptiv-category");
+let adaptiveGroup = document.querySelector(".adaptiv-group");
+
+function setVisibleAdaptiveCatalog() {
+  adaptiveCatalog.classList.toggle("active");
+}
+
+// close adaptive-category
+
+function closeAdaptiveCatalog() {
+  adaptiveCategory.classList.remove("active");
+}
+
+// close adaptive-group
+
+function closeAdaptiveGroup() {
+  adaptiveGroup.classList.remove("active");
 }
 
 // category
 
+let typeItem = document.querySelectorAll(".catalog__types-goods ul li button");
+let typeAdaptiveItem = document.querySelectorAll(
+  ".adaptiv-catalog__btns .adaptiv-catalog__container-btn"
+);
+let categoryUl = document.querySelectorAll(
+  ".catalog__category-news-products ul"
+);
+let adaptiveCategoryItem = document.querySelectorAll(
+  ".adaptiv-category-btns .adaptiv-catalog__container-btn"
+);
+
+let categoryItem = document.querySelectorAll(
+  ".catalog__category-news-products ul li button"
+);
+let groupItem = document.querySelectorAll(".catalog__groups-goods ul");
+let adaptivGroupItem = document.querySelectorAll(
+  ".adaptiv-group-items .adaptiv-group"
+);
+
 function categoryMenu() {
-  let typeItem = document.querySelectorAll(
-    ".catalog__types-goods ul li button"
-  );
-  let categoryUl = document.querySelectorAll(
-    ".catalog__category-news-products ul"
-  );
-  let categoryItem = document.querySelectorAll(
-    ".catalog__category-news-products ul li button"
-  );
-  let groupItem = document.querySelectorAll(".catalog__groups-goods ul");
+  function setVisibleAdaptiveCategory() {
+    let elem = this;
+    console.log(elem);
+    adaptiveCategoriesUl.forEach(function (e) {
+      if (elem.id == e.id.substr(0, e.id.indexOf("-"))) {
+        e.classList.add("active");
+      }
+    });
+  }
 
   function setVisibleCategory() {
     let elem = this;
@@ -318,8 +515,6 @@ function categoryMenu() {
     categoryUl.forEach(function (e) {
       e.classList.remove("active");
       if (elem.id == e.id.substr(0, e.id.indexOf("-"))) {
-        console.log("===", e.id.substr(0, e.id.indexOf("-")).length);
-        console.log("==", elem.id.length);
         e.classList.add("active");
       }
     });
@@ -343,12 +538,31 @@ function categoryMenu() {
     });
   }
 
+  function setVisibleAdaptivGroup() {
+    let elem = this;
+
+    adaptivGroupItem.forEach(function (e) {
+      if (elem.id == e.id.substr(0, e.id.indexOf("-"))) {
+        console.log(e);
+        e.classList.add("active");
+      }
+    });
+  }
+
   typeItem.forEach((item) => {
     item.addEventListener("click", setVisibleCategory);
   });
 
+  typeAdaptiveItem.forEach((item) => {
+    item.addEventListener("click", setVisibleAdaptiveCategory);
+  });
+
   categoryItem.forEach((item) => {
     item.addEventListener("click", setVisibleGroup);
+  });
+
+  adaptiveCategoryItem.forEach((item) => {
+    item.addEventListener("click", setVisibleAdaptivGroup);
   });
 }
 

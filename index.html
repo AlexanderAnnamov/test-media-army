@@ -15,6 +15,265 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="adaptiv-catalog">
+        <div class="adaptiv-catalog__container">
+          <div class="adaptiv-catalog__header">
+            <button
+              onclick="setVisibleAdaptiveCatalog()"
+              class="adaptiv-catalog__header-btn"
+            >
+              <img src="./img/catalog/arrow-left.svg" alt="" />
+            </button>
+            <h2>Каталог товаров</h2>
+            <button
+              onclick="setVisibleAdaptiveCatalog()"
+              class="adaptiv-catalog__header-btns"
+            >
+              <img src="./img/catalog/close-black.svg" alt="" />
+            </button>
+          </div>
+          <div class="adaptiv-catalog__btns">
+            <button class="adaptiv-catalog__container-btn">
+              <div class="adaptiv-catalog__name">
+                <img src="./img/catalog/topical.svg" alt="" />
+                <p>Актуальные</p>
+              </div>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <div class="adaptiv-catalog__name">
+                <img src="./img/catalog/stock.svg" alt="" />
+                <p>Акции</p>
+              </div>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button id="new/adaptive" class="adaptiv-catalog__container-btn">
+              <p>Новогодние товары</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Галантерея и аксессуары</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Хозтовары</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Праздники и подарки</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Интерьерные товары для дома</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Домашний текстиль</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Творчество</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Туризм и активный отдых</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Товары для рассады</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Игрушки, товары для детей</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Пикник</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Спортивные товары</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Товары для животных</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Интерьерное освещение</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Одежда, обувь, головные уборы</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Снегоуборочный инвентарь</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Бассейны и аксессуары</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Средства гигиены и бытовая химия</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Товары для бани и сауны</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Строительство и ремонт</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+            <button class="adaptiv-catalog__container-btn">
+              <p>Автотовары</p>
+              <img src="./img/catalog/arrow-right.svg" alt="" />
+            </button>
+          </div>
+          <div class="adaptiv-category-items">
+            <div id="new/adaptive-label" class="adaptiv-category">
+              <div class="adaptiv-category__container">
+                <div class="adaptiv-catalog__header">
+                  <button
+                    onclick="closeAdaptiveCatalog()"
+                    class="adaptiv-catalog__header-btn"
+                  >
+                    <img src="./img/catalog/arrow-left.svg" alt="" />
+                  </button>
+                  <h2>Новогодние товары</h2>
+                  <button
+                    onclick="closeAdaptiveCatalog()"
+                    class="adaptiv-catalog__header-btns"
+                  >
+                    <img src="./img/catalog/close-black.svg" alt="" />
+                  </button>
+                </div>
+                <div class="adaptiv-category-btns">
+                  <button
+                    id="garlands/adaptive"
+                    class="adaptiv-catalog__container-btn"
+                  >
+                    <p>Гирлянды и освещение</p>
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Ёлки искусственные</p>
+
+                    <img src="./img/catalog/arrow-right.svg" alt="" />
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Украшения для ёлки</p>
+                    <img src="./img/catalog/arrow-right.svg" alt="" />
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Сувениры новогодние</p>
+                    <img src="./img/catalog/arrow-right.svg" alt="" />
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Посуда новогодняя</p>
+                    <img src="./img/catalog/arrow-right.svg" alt="" />
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Текстиль новогодний</p>
+                    <img src="./img/catalog/arrow-right.svg" alt="" />
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Карнавальные товары</p>
+                    <img src="./img/catalog/arrow-right.svg" alt="" />
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Игрушки новогодние</p>
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Галантерея новогодняя</p>
+                    <img src="./img/catalog/arrow-right.svg" alt="" />
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Упаковка новогодняя</p>
+                    <img src="./img/catalog/arrow-right.svg" alt="" />
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Новогодние книжки</p>
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Канцтовары новогодние</p>
+                    <img src="./img/catalog/arrow-right.svg" alt="" />
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Атрибуты праздника</p>
+                    <img src="./img/catalog/arrow-right.svg" alt="" />
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Одежда и обувь новогодние</p>
+                    <img src="./img/catalog/arrow-right.svg" alt="" />
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Товары для дома новогодние</p>
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Открытки новогодние</p>
+                  </button>
+                  <button class="adaptiv-catalog__container-btn">
+                    <p>Предыдущие коллекции</p>
+                    <img src="./img/catalog/arrow-right.svg" alt="" />
+                  </button>
+                </div>
+                <div class="adaptiv-group-items">
+                  <div id="garlands/adaptive-group" class="adaptiv-group">
+                    <div class="adaptiv-group__container">
+                      <div class="adaptiv-catalog__header">
+                        <button
+                          onclick="closeAdaptiveGroup()"
+                          class="adaptiv-catalog__header-btn"
+                        >
+                          <img src="./img/catalog/arrow-left.svg" alt="" />
+                        </button>
+                        <div class="adaptiv-group__name">
+                          <h2>Новогодние товары</h2>
+                          <h3>Гирлянды и освещение</h3>
+                        </div>
+
+                        <button
+                          onclick="closeAdaptiveGroup()"
+                          class="adaptiv-catalog__header-btns"
+                        >
+                          <img src="./img/catalog/close-black.svg" alt="" />
+                        </button>
+                      </div>
+                      <button class="adaptiv-catalog__container-btn">
+                        <p>Гирлянды для дома</p>
+                      </button>
+                      <button class="adaptiv-catalog__container-btn">
+                        <p>Гирлянды уличные</p>
+                      </button>
+                      <button class="adaptiv-catalog__container-btn">
+                        <p>Гирлянды на батарейках,USB</p>
+                      </button>
+                      <button class="adaptiv-catalog__container-btn">
+                        <p>Верхушки с подсветкой</p>
+                      </button>
+                      <button class="adaptiv-catalog__container-btn">
+                        <p>Световые приборы</p>
+                      </button>
+                      <button class="adaptiv-catalog__container-btn">
+                        <p>Фигуры световые</p>
+                      </button>
+                      <button class="adaptiv-catalog__container-btn">
+                        <p>Удлинители для гирлянд</p>
+                      </button>
+                      <button class="adaptiv-catalog__container-btn">
+                        <p>Ленты светодиодные</p>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <header class="header">
         <div class="header__container">
           <div class="header__row">
@@ -1220,7 +1479,10 @@
             </div>
             <img src="./img/catalog/arrow-right.svg" alt="" />
           </button>
-          <button class="adaptiv-menu__catalog">
+          <button
+            onclick="setVisibleAdaptiveCatalog()"
+            class="adaptiv-menu__catalog"
+          >
             <p>Каталог товаров</p>
             <img src="./img/catalog/catalog-products.png" alt="" />
           </button>
